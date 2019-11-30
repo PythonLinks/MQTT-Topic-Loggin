@@ -17,6 +17,9 @@ While MQTT provides a retained message, for chat applications one really wants t
 
 It seems to me to be an obvious way to record MQTT data.  I am hugely surprised that such a data logger is not already available.   There are a number of time series databases, but generally they are not hierarchical.  The great thing about doing it this way, is that when you reorganize your MQTT tree, you can also just close the files, move the branch of the file system, and  resume logging.  
 
+## Implementation Details   
+The software is implemented in Erlang, so it will scale very nicely. 
+
 ## Possible Enhancements. 
 This list of enhancements tells you the limits of what the software does and does not do. 
 I am considering making the following changes. 
@@ -30,12 +33,3 @@ I am considering making the following changes.
     3. Delete a topic log.
 4. Support csv data.
 5. Any other requests?   
-
-## Implementation Details   
-The software is implemented in Python.  One thread receives the MQTT messages.  Then there is one thread for writting each topic to the file system.  On every data write, the process storage is flushed, so that the web server has immediate access to the JSON file.  Eventually the OS syncs the data to the HDD or SSD.   
-
-For scalability, I treid implementing this in Erlang, but sadly the Erlang Kernel does not have a flush command, so it woould not cooperate will with NGINX.  
-
-Next I will be porting this to GoLang. 
-
-
