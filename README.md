@@ -18,18 +18,19 @@ While MQTT provides a retained message, for chat applications one really wants t
 It seems to me to be an obvious way to record MQTT data.  I am hugely surprised that such a data logger is not already available.   There are a number of time series databases, but generally they are not hierarchical.  The great thing about doing it this way, is that when you reorganize your MQTT tree, you can also just close the files, move the branch of the file system, and  resume logging.  
 
 ## Implementation Details   
-The software is implemented in Erlang, so it will scale very nicely. 
+The software is implemented in Python, so it is trivial to honor most feature requests. 
 
 ## Possible Enhancements. 
 This list of enhancements tells you the limits of what the software does and does not do. 
 I am considering making the following changes. 
 
-1. Add a time stamt to each record. 
+1. Optionally add a time stamp to each record. 
 2. Include a web server in the docker container. 
 3. Rotate the files when they get too big. 
 3. Let the container respond to commands sent over MQTT.  
     1. Shut down
     2. Move a topic and the associated tree of unix files
     3. Delete a topic log.
-4. Support csv data.
+4. Create a CSV data logger.   It is actually simpler than the JSON 
+   topic logger, so very easy to do. 
 5. Any other requests?   
