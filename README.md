@@ -20,13 +20,13 @@ It seems to me to be an obvious way to record MQTT data.  I am hugely surprised 
 I expect that this software will be used by lots of small organizations hosting their 
 own Simple Topic Loggers. In that sense it is infinitely scalable.  
 
-But the money and the focus appears to be on the big companies.   How well will this scale?  Gemerally the bottleneck is how much data can pour over a single MQTT connection, and how fast is it possible to write to the SSD or HDD drives.  If you want to use multiple MQTT connections, you can use multiple Simple MQTT Topic Loggers, one for each branch of the tree, possibly on different servers.  It is pretty easy to assign as many of these as you want to different branches of the MQTT Tree.  
+But the money and the focus appears to be on the big companies.   How well will this scale?  Gemerally the bottleneck is how much data can pour over a single MQTT connection, and how fast is it possible to write to the SSD or HDD drives.  If you want to use multiple MQTT connections, or record to different drives,  you can use multiple Simple MQTT Topic Loggers, one for each branch of the tree, possibly on different drives or servers.  It is pretty easy to assign as many of these as you want to different branches of the MQTT Tree.  If there is demand, I will release a version which which supports multiple loggers, possibly even running on different servers. 
 
 ## Possible Enhancements. 
-For teachers, I am currently working on releasing a separate docker container with an NGinx Server, an MQTT Broker, and a [Forest Chat Wiki](ForestWiki.com)
+For small groups, I am currently working on releasing a separate docker container with an NGinx Server, an MQTT Broker, and a [Forest Chat Wiki](ForestWiki.com)
 
 This list of enhancements tells you the limits of what the software does and does not do. 
-I am considering making the following changes. 
+I am considering making the following changes:
 
 1. Optionally add a time stamp to each record. 
 3. Rotate the files when they get too big. 
@@ -34,6 +34,6 @@ I am considering making the following changes.
     1. Shut down
     2. Move a topic and the associated tree of unix files
     3. Delete a topic log.
-4. Create a CSV data logger.   It is actually simpler than the JSON 
-   topic logger, so very easy to do. 
+4. Create a CSV data logger.  Let the user choose which one they want to use. 
+It is actually simpler than the JSON topic logger, so very easy to do. 
 5. Any other requests?   
