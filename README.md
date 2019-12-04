@@ -1,5 +1,5 @@
-# MQTT Topic Logger
-A Docker container to log an MQTT topic tree to a directory tree of JSON files.  The files can then be shared, processed or served with NGINX or Apache.  
+ # MQTT Simple Topic Logger
+[A Docker container](https://hub.docker.com/repository/docker/pythonlinks/simple-topic-logger) to log an MQTT topic tree to a directory tree of JSON files.  The files can then be shared, processed or served with NGINX or Apache.  
 
 An obvious way to store time series data is in a file. Then it is easy for your favorite software to read the file, or to send the file to a colleague, or serve it with a web server. 
 
@@ -14,7 +14,11 @@ Each MQTT message arrives as a JSON string, and gets logged to a file. The MQTT 
 
 While MQTT provides a retained message, for chat applications one really wants to see say 6 retained messages. So there is also a file cache of the 6 most recent messages for each topic.  That is all that most chat servers really want to see.  
 
-It seems to me to be an obvious way to record MQTT data.  I am hugely surprised that such a data logger is not already available.   There are a number of time series databases, but generally they are not hierarchical.  The great thing about doing it this way, is that when you reorganize your MQTT tree, you can also just close the files, move the branch of the file system, and  resume logging.  
+It seems to me to be an obvious way to record MQTT data.  I am hugely surprised that such a data logger is not already available.   There are a number of time series databases, but generally they are not hierarchical.  The great thing about doing it this way, is that when you reorganize your MQTT tree, you can also just close the files, move the branch of the file system, and  resume logging.
+
+##TO RUN THIS CONTAINER
+
+docker run   -d  -v /Path/To/Your/Data/Direcotry:/app/data  -t pythonlinks/simple-topic-logger:latest
 
 ##Architecture
 The first release of this software is written in Python   If there is demand, I would love to port it to GoLang. 
@@ -48,4 +52,4 @@ I am considering making the following changes:
     3. Delete a topic log.
 4. Create a CSV data logger.  Let the user choose which one they want to use. 
 It is actually simpler than the JSON topic logger, so very easy to do. 
-5. Any other requests?   
+5. Any other requests? 
