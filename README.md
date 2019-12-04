@@ -1,4 +1,4 @@
-# MQTT Topic Logging
+# MQTT Topic Logger
 A Docker container to log an MQTT topic tree to a directory tree of JSON files.  The files can then be shared, processed or served with NGINX or Apache.  
 
 An obvious way to store time series data is in a file. Then it is easy for your favorite software to read the file, or to send the file to a colleague, or serve it with a web server. 
