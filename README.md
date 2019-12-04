@@ -37,8 +37,8 @@ But the money and the focus appears to be on the big companies.   How well will 
 This list of enhancements tells you the limits of what the software does and does not do. 
 I am considering making the following changes:
 
-1. Including a web server in the container
-2  Including an MQTT broker in the container
+1. Including a web server in the container.  
+2.  Including an MQTT broker in the container.  
 3.  Including the [Forest Chat Wiki](ForestWiki.com) in the container. 
 1. Optionally add a time stamp to each record. 
 3. Rotate the files when they get too big. 
