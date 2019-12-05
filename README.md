@@ -50,6 +50,11 @@ It should be
 You are now free to migrate to your own MQTT server, or change your topics to be logged. 
 Wildcard logging also works.  Creates a tree of files. 
 
+Remember containers and users have different file permissions. 
+You may not have permissions on some of the files. 
+So just enter the container
+docker exec -it logger /bin/bash
+And you can dlete whichever files you want. 
 
 ##Architecture
 The first release of this software is written in Python   If there is demand, I would love to port it to GoLang. 
