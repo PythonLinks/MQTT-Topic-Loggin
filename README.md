@@ -79,6 +79,8 @@ There are three types of scalability.
 
 But the money and the focus appears to be on the big companies.   How well will this scale for them?    If you want to use multiple MQTT connections, or record to different drives,  you can use multiple Simple MQTT Topic Loggers, one for each branch of the tree, possibly on different drives or servers.  It is pretty easy to assign as many of these as you want to different branches of the MQTT Tree.  If there is demand, I will release a version which which supports multiple loggers, possibly even running on different servers. 
 
+A good hard drive can doa few huncred I/O operations per second.  SSD drives can do about as many writes, and an amazing number of reads.  But MQTT logging is mostly writes.   And chat is mostly all in a few chat rooms at any one time. 
+
 ## Possible Enhancements. 
 
 This list of enhancements tells you the limits of what the software does and does not do. 
