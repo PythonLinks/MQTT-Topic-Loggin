@@ -18,7 +18,22 @@ It seems to me to be an obvious way to record MQTT data.  I am hugely surprised 
 
 ##TO RUN THIS CONTAINER
 
-docker run   -d  -v /Path/To/Your/Data/Direcotry:/app/data  -t pythonlinks/simple-topic-logger:latest
+docker run   -d -n logger  -v /Path/To/Your/Data/Direcotry:/app/data  -t pythonlinks/simple-topic-logger:latest
+
+You can then edit the configuration file in 
+/Path/To/Your/Data/Directory/config.py
+
+`
+class Config(object):
+    userName = 'MyUserName'
+    password = 'MyPassword'
+    topics = ['#']
+    qos = 0
+
+Then restart the container
+
+docker restart logger
+
 
 ##Architecture
 The first release of this software is written in Python   If there is demand, I would love to port it to GoLang. 
@@ -39,7 +54,7 @@ But the money and the focus appears to be on the big companies.   How well will 
 ## Possible Enhancements. 
 
 This list of enhancements tells you the limits of what the software does and does not do. 
-I am considering making the following changes:
+I am considering making the following changes listed below.  It all depends on what people want. 
 
 1. Including a web server in the container.  
 2.  Including an MQTT broker in the container.  
