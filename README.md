@@ -16,7 +16,7 @@ While MQTT provides a retained message, for chat applications one really wants t
 
 It seems to me to be an obvious way to record MQTT data.  I am hugely surprised that such a data logger is not already available.   There are a number of time series databases, but generally they are not hierarchical.  The great thing about doing it this way, is that when you reorganize your MQTT tree, you can also just close the files, move the branch of the file system, and  resume logging.
 
-##TO RUN THIS CONTAINER
+## TO RUN THIS CONTAINER
 
 First Create a directory for the data
 $mkdir Data
