@@ -41,6 +41,15 @@ Then restart the container
 
 docker start logger
 
+If you now look at 
+Data/MyTopic/log.json
+
+It should be
+[{"text":"Hello World"}]
+
+You are now free to migrate to your own MQTT server, or change your topics to be logged. 
+Wildcard logging also works.  Creates a tree of files. 
+
 
 ##Architecture
 The first release of this software is written in Python   If there is demand, I would love to port it to GoLang. 
