@@ -18,21 +18,28 @@ It seems to me to be an obvious way to record MQTT data.  I am hugely surprised 
 
 ##TO RUN THIS CONTAINER
 
-docker run   -d -n logger  -v /Path/To/Your/Data/Direcotry:/app/data  -t pythonlinks/simple-topic-logger:latest
+First Create a directory for the data
+$mkdir Data
+That way you have permissions on that directory. 
+Now create the config.py file
+$docker run  -d  --name logger -v /Path/To/My/Directory/Data:/app/data  -t pythonlinks/simple-topic-logger:latest config
+
+STOP THE CONTAINER
+$docker stop logger
 
 You can then edit the configuration file in 
-/Path/To/Your/Data/Directory/config.py
+/Path/To/Your/Data/Directory/Data/config.py
 
 `
 class Config(object):
     userName = 'MyUserName'
     password = 'MyPassword'
-    topics = ['#']
+    topics = ['MyTopic']
     qos = 0
 
 Then restart the container
 
-docker restart logger
+docker start logger
 
 
 ##Architecture
