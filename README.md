@@ -1,7 +1,7 @@
  # MQTT Simple Topic Logger
 [A Docker container](https://hub.docker.com/repository/docker/pythonlinks/simple-topic-logger) to log an MQTT topic tree to a directory tree of JSON files.  The files can then be shared, processed or served with NGINX or Apache.  
 
-An obvious way to store time series data is in a file. Then it is easy for your favorite software to read the file, or to send the file to a colleague, or serve it with a web server. 
+An obvious way to store time series data is in a file. Then it is easy for your favorite software to read the file, or to send the file to a colleague, or serve it with a web server.  No need to complicate your life with a database.
 
 For a tree of time series data, it makes sense to store the data to a file system tree.  Then the data has the same organization as your MQTT Tree.  And it is then very easy for your web server to serve the right file, based only on the MQTT topic name. 
 
